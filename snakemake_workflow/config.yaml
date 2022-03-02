@@ -1,0 +1,14 @@
+Table_coverage: "/BCGLAB/Nicolo/Tesi/input_table/input_coverage.tsv"
+Path_save_result: "/BCGLAB/Nicolo/Tesi/synthetic_dilutions/"
+Path_script_cov: "/BCGLAB/Nicolo/Tesi/script/Coverage_select.R"
+N_threds_cov: 4
+Table_python: "/BCGLAB/Nicolo/Tesi/synthetic_dilutions/Output_Coverage_Table.tsv"
+TC_fin: [0.01,0.05,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8]
+Cov_fin: [110,120,70,55,60,59,50,45,45,40,35,39,33,35,34]
+Table_out: "/BCGLAB/Nicolo/Tesi/synthetic_dilutions/fraction_bam.csv"
+Path_script_py: "/BCGLAB/Nicolo/Tesi/script/Fraction_computation.py"
+Path_script_samtools: "/BCGLAB/Nicolo/Tesi/script/Samtools.R"
+Path_synthetic_dilutions: "/BCGLAB/Nicolo/Tesi/synthetic_dilutions"
+Path_bash_file: "/BCGLAB/Nicolo/Tesi/script/test_samtools.sh"
+N_threds_samtools: 10
+Bash_file: "/BCGLAB/Nicolo/Tesi/script/test_samtools.sh"

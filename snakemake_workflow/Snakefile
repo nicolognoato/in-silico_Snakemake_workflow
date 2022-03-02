@@ -1,0 +1,48 @@
+configfile: "config.yaml"
+
+rule all:	
+	input: 
+	    config["Bash_file"]
+
+
+rule coverage:
+	input:
+	    config["Table_coverage"],
+	    config["Path_save_result"]
+	params:
+	    config["N_threds_cov"]
+	output:
+	    config["Table_python"]
+	script:
+	    config["Path_script_cov"]
+
+
+rule table_py:
+	input:
+	    config["Table_python"]
+	params:
+	    config["TC_fin"],
+	    config["Cov_fin"]
+	output:
+        	    config["Table_out"]
+	script:
+        	    config["Path_script_py"]
+
+
+rule samtools:
+	input:
+	    config["Table_out"],
+	    config["Path_synthetic_dilutions"]
+	params:
+	    config["TC_fin"],
+	    config["N_threds_samtools"]
+	output:
+	    config["Path_bash_file"]
+	script: 
+	    config["Path_script_samtools"]
+
+rule bash:
+	input:
+	    config["Bash_file"]
+	shell:
+	    "bash {input}"
