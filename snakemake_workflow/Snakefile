@@ -17,19 +17,19 @@ rule coverage:
 	    config["Path_script_cov"]
 
 
-rule table_py:
+rule Fp_Fg_computation:
 	input:
 	    config["Table_python"]
 	params:
 	    config["TC_fin"],
 	    config["Cov_fin"]
 	output:
-        	    config["Table_out"]
+            config["Table_out"]
 	script:
-        	    config["Path_script_py"]
+            config["Path_script_py"]
 
 
-rule samtools:
+rule Bash_file_generator:
 	input:
 	    config["Table_out"],
 	    config["Path_synthetic_dilutions"]
@@ -41,7 +41,7 @@ rule samtools:
 	script: 
 	    config["Path_script_samtools"]
 
-rule bash:
+rule bash_execution:
 	input:
 	    config["Bash_file"]
 	shell:
